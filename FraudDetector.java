@@ -14,19 +14,31 @@ public class FraudDetector {
 
     public void detectFraud() {
         for (Transaction tx : transactions) {
-            if (tx.getAmount() > 1000000) {
-                System.out.println("Fraud detected: " + tx);
-            }
-            if (tx.getTrader().getName().equals("Pokemon")) {
-                System.out.println("Fraud detected: " + tx);
-            }
-            if (tx.getTrader().getCity().equals("Sydney ")) {
-                System.out.println("Fraud detected: " + tx);
-            }
-            if (tx.getTrader().getCountry().equals("Jamaica")) {
+            if (isAmountTooHigh(tx) || isPokemonTrader(tx) || isFromSydney(tx)
+                    || isFromJamaica(tx) || isGermanBigTransaction(tx)) {
                 System.out.println("Fraud detected: " + tx);
             }
         }
+    }
+
+    private boolean isAmountTooHigh(Transaction tx) {
+        return tx.getAmount() > 1_000_000;
+    }
+
+    private boolean isPokemonTrader(Transaction tx) {
+        return tx.getTrader().getName().equals("Pokemon");
+    }
+
+    private boolean isFromSydney(Transaction tx) {
+        return tx.getTrader().getCity().equals("Sydney");
+    }
+
+    private boolean isFromJamaica(Transaction tx) {
+        return tx.getTrader().getCountry().equals("Jamaica");
+    }
+
+    private boolean isGermanBigTransaction(Transaction tx) {
+        return tx.getTrader().getCountry().equals("Germany") && tx.getAmount() > 1000;
     }
 
     public static void main(String[] args) {

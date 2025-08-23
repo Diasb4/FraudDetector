@@ -20,6 +20,9 @@ public class FraudDetector {
             if (tx.getTrader().getName().equals("Pokemon")) {
                 System.out.println("Fraud detected: " + tx);
             }
+            if (tx.getTrader().getCity().equals("Sydney ")) {
+                System.out.println("Fraud detected: " + tx);
+            }
         }
     }
 

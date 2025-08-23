@@ -14,7 +14,7 @@ public class FraudDetector {
 
     public void detectFraud() {
         for (Transaction tx : transactions) {
-            if (tx.getAmount() > 10000) {
+            if (tx.getAmount() > 1000000) {
                 System.out.println("Fraud detected: " + tx);
             }
             if (tx.getTrader().getName().equals("Pokemon")) {
@@ -31,7 +31,7 @@ public class FraudDetector {
         Trader trader3 = new Trader("Pokemon", "Pallet Town");
 
         Transaction tx1 = new Transaction(trader1, 5000);
-        Transaction tx2 = new Transaction(trader2, 15000);
+        Transaction tx2 = new Transaction(trader2, 1500000);
         Transaction tx3 = new Transaction(trader3, 2000);
 
         detector.addTransaction(tx1);

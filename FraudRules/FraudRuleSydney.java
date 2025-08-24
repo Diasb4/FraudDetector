@@ -2,7 +2,7 @@ package FraudRules;
 
 import TraidingInfo.Transaction;
 
-class FraudRuleSydney implements FraudRule {
+public class FraudRuleSydney implements FraudRule {
     @Override
     public boolean isFraud(Transaction tx) {
         return tx.getTrader().getCity().equals("Sydney");

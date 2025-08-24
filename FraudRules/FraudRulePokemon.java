@@ -2,7 +2,7 @@ package FraudRules;
 
 import TraidingInfo.Transaction;
 
-class FraudRulePokemon implements FraudRule {
+public class FraudRulePokemon implements FraudRule {
     @Override
     public boolean isFraud(Transaction tx) {
         return tx.getTrader().getName().equals("Pokemon");

@@ -1,3 +1,4 @@
+package TraidingInfo;
 
 public class Trader {
     private String name;

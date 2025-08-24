@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import TraidingInfo.Trader;
+import TraidingInfo.Transaction;
+
 public class FraudDetector {
     private List<Transaction> transactions;
 
@@ -41,6 +44,10 @@ public class FraudDetector {
         return tx.getTrader().getCountry().equals("Germany") && tx.getAmount() > 1000;
     }
 
+    /*
+     * Main method for testing
+     * Завтра доделать, продолжи с 9.txt, и проведи рефакторинг кода по SRP
+     */
     public static void main(String[] args) {
         FraudDetector detector = new FraudDetector();
 

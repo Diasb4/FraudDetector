@@ -1,3 +1,5 @@
+package TraidingInfo;
+
 public class Transaction {
     private Trader trader;
     private double amount;

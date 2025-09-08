@@ -45,5 +45,6 @@ public class FraudDetector {
                 new Transaction(trader4, 3000));
 
         detector.detectFraud(transactions);
+        System.out.println("The square root of π is " + Math.sqrt(Math.PI));
     }
 }
